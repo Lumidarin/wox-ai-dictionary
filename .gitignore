@@ -1,0 +1,12 @@
+# 个人备忘（本地文件，不随仓库分发）
+有一个对话是聊划词插件的，并且我已经下载了easydic等待测试.txt
+
+# 开发文档（不随仓库分发）
+AGENTS.md
+
+# 分发安装包（需要时用 GitHub Releases 发布）
+*.zip
+
+# Node
+node_modules/
+npm-debug.log*

@@ -1,0 +1,303 @@
+{
+  "Id": "dc59e6f7-2ec4-49f0-88d8-515f571e27d2",
+  "TriggerKeywords": [
+    "dic"
+  ],
+  "Name": "i18n:plugin_name",
+  "Description": "i18n:plugin_description",
+  "Author": "25651",
+  "Version": "0.1.0",
+  "MinWoxVersion": "2.0.0",
+  "Runtime": "Nodejs",
+  "Entry": "index.js",
+  "Icon": "relative:images/app.svg",
+  "SupportedOS": [
+    "windows",
+    "linux",
+    "darwin"
+  ],
+  "Features": [
+    {
+      "Name": "querySelection"
+    }
+  ],
+  "I18n": {
+    "en_US": {
+      "plugin_name": "AI Dictionary",
+      "plugin_description": "Detailed dictionary entries powered by an OpenAI-compatible API",
+      "setting_model": "Model",
+      "setting_model_tip": "Model name exposed by the provider, for example deepseek-v4-flash. Note: this plugin currently calls the API directly and does not use the keys or models configured in Wox Settings → AI (AI streaming is not available to Node.js plugins in current Wox versions).",
+      "setting_language": "Explanation language",
+      "setting_language_tip": "Language used for definitions and explanations. The {language} placeholder in the prompt below is replaced with this language.",
+      "setting_custom_language": "Custom language name",
+      "setting_custom_language_tip": "Used only when Explanation Language is set to 自定义. The AI writes definitions in this language, while card labels stay in English (BrE/AmE/Collocations/Note).",
+      "setting_api_key": "API Key",
+      "setting_api_key_tip": "Required for AI lookups. Current Wox versions cannot route Node.js plugin requests through the Wox AI section, so this plugin sends requests directly to the endpoint below and needs its own key.",
+      "setting_base_url": "API Base URL",
+      "setting_base_url_tip": "OpenAI-compatible API base URL. Both .../v1 and a full .../chat/completions URL are accepted.",
+      "setting_prompt": "Custom prompt",
+      "setting_prompt_tip": "Data-extraction prompt sent to the AI (key|value format). {term} is replaced with the word, {language} with the explanation language. The Markdown card is rendered by the plugin per language. Leave empty for the default template.",
+      "setting_max_tokens": "Maximum output tokens",
+      "setting_max_tokens_tip": "Keep this low for fast dictionary responses. Recommended: 350.",
+      "setting_timeout": "Request timeout (seconds)",
+      "setting_timeout_tip": "Stop waiting after this many seconds. Recommended: 30.",
+      "result_lookup": "Look up “{term}”",
+      "result_hint_ai_only": "Press Enter to use the AI dictionary",
+      "ai_result": "AI dictionary · Markdown card",
+      "action_lookup": "Look up word",
+      "action_copy": "Copy entry",
+      "msg_not_found_no_key": "No API Key configured, cannot call AI. Fill in the API Key in the plugin settings (current Wox versions do not use keys from Wox Settings → AI for Node.js plugins).",
+      "msg_no_model": "No model configured. Fill in a model name in the plugin settings, for example deepseek-v4-flash.",
+      "msg_loading": "Looking up “{term}”…",
+      "msg_loading_detail_ai_only": "Asking AI for a compact entry.",
+      "msg_failed": "Dictionary lookup failed",
+      "msg_empty": "The API returned an empty response. Please try again.",
+      "setting_reset_prompt": "Restore default prompt",
+      "setting_reset_prompt_tip": "Check and save to restore the custom prompt to the built-in default template (contains the {language} placeholder)."
+    },
+    "zh_CN": {
+      "plugin_name": "AI 词典",
+      "plugin_description": "使用 OpenAI 兼容接口生成详细词典释义",
+      "setting_model": "模型",
+      "setting_model_tip": "服务商提供的模型名，例如 deepseek-v4-flash。注意：当前版本直连调用接口，不使用 Wox「设置 → AI」中配置的密钥和模型（Wox 暂不支持 Node 插件调用 AI 流式接口）。",
+      "setting_language": "释义语言",
+      "setting_language_tip": "定义和说明使用的语言。下方提示词中的 {language} 占位符会被替换为该语言。",
+      "setting_custom_language": "自定义语言名称",
+      "setting_custom_language_tip": "仅当释义语言选择「自定义」时生效。AI 将使用该语言书写释义，卡片标签保持英文结构（BrE/AmE/Collocations/Note）。",
+      "setting_api_key": "API Key",
+      "setting_api_key_tip": "调用 AI 必需。当前 Wox 版本无法把 Node 插件的请求路由到 Wox「设置 → AI」，本插件直接请求下方接口地址，因此需要在这里单独填写密钥。",
+      "setting_base_url": "API 接口地址",
+      "setting_base_url_tip": "OpenAI 兼容 API 地址，支持填写 .../v1 或完整的 .../chat/completions 地址。",
+      "setting_prompt": "自定义提示词",
+      "setting_prompt_tip": "发送给 AI 的数据提取提示词（key|value 格式）。{term} 替换为查询词，{language} 替换为所选释义语言。卡片格式由插件按语言渲染，不依赖 AI 遵循 Markdown。留空使用默认模板。",
+      "setting_max_tokens": "最大输出 token 数",
+      "setting_max_tokens_tip": "数值越小响应越快，建议 350。",
+      "setting_timeout": "请求超时（秒）",
+      "setting_timeout_tip": "超过此时间后停止等待，建议 30 秒。",
+      "result_lookup": "查询「{term}」",
+      "result_hint_ai_only": "按回车调用 AI 词典",
+      "ai_result": "AI 词典 · Markdown 卡片",
+      "action_lookup": "查询单词",
+      "action_copy": "复制词条",
+      "msg_not_found_no_key": "未配置 API Key，无法调用 AI。请在插件设置中填写 API Key（当前 Wox 版本不使用 Wox「设置 → AI」中的密钥）。",
+      "msg_no_model": "未填写模型名。请在插件设置中填写模型名称，例如 deepseek-v4-flash。",
+      "msg_loading": "正在查询「{term}」…",
+      "msg_loading_detail_ai_only": "正在请求 AI 生成简洁词条。",
+      "msg_failed": "词典查询失败",
+      "msg_empty": "API 返回了空内容，请重试。",
+      "setting_reset_prompt": "恢复默认提示词",
+      "setting_reset_prompt_tip": "勾选并保存后，会把「自定义提示词」恢复为系统默认模板（含 {language} 占位符）。"
+    }
+  },
+  "SettingDefinitions": [
+    {
+      "Type": "textbox",
+      "Value": {
+        "Key": "model",
+        "Label": "i18n:setting_model",
+        "Tooltip": "i18n:setting_model_tip",
+        "DefaultValue": "deepseek-v4-flash",
+        "MaxLines": 1,
+        "Style": {
+          "Width": 300
+        },
+        "Validators": [
+          {
+            "Type": "not_empty",
+            "Value": {}
+          }
+        ]
+      }
+    },
+    {
+      "Type": "textbox",
+      "Value": {
+        "Key": "apiKey",
+        "Label": "i18n:setting_api_key",
+        "Tooltip": "i18n:setting_api_key_tip",
+        "DefaultValue": "",
+        "MaxLines": 1,
+        "Style": {
+          "Width": 500
+        }
+      }
+    },
+    {
+      "Type": "textbox",
+      "Value": {
+        "Key": "baseUrl",
+        "Label": "i18n:setting_base_url",
+        "Tooltip": "i18n:setting_base_url_tip",
+        "DefaultValue": "https://api.deepseek.com",
+        "MaxLines": 1,
+        "Style": {
+          "Width": 500
+        },
+        "Validators": [
+          {
+            "Type": "not_empty",
+            "Value": {}
+          }
+        ]
+      }
+    },
+    {
+      "Type": "select",
+      "Value": {
+        "Key": "language",
+        "Label": "i18n:setting_language",
+        "Tooltip": "i18n:setting_language_tip",
+        "DefaultValue": "简体中文",
+        "Options": [
+          {
+            "Label": "简体中文",
+            "Value": "简体中文"
+          },
+          {
+            "Label": "繁體中文",
+            "Value": "繁體中文"
+          },
+          {
+            "Label": "English",
+            "Value": "English"
+          },
+          {
+            "Label": "日本語",
+            "Value": "日本語"
+          },
+          {
+            "Label": "한국어",
+            "Value": "한국어"
+          },
+          {
+            "Label": "Français",
+            "Value": "Français"
+          },
+          {
+            "Label": "Deutsch",
+            "Value": "Deutsch"
+          },
+          {
+            "Label": "Español",
+            "Value": "Español"
+          },
+          {
+            "Label": "Italiano",
+            "Value": "Italiano"
+          },
+          {
+            "Label": "Português",
+            "Value": "Português"
+          },
+          {
+            "Label": "Nederlands",
+            "Value": "Nederlands"
+          },
+          {
+            "Label": "Русский",
+            "Value": "Русский"
+          },
+          {
+            "Label": "Polski",
+            "Value": "Polski"
+          },
+          {
+            "Label": "Українська",
+            "Value": "Українська"
+          },
+          {
+            "Label": "Türkçe",
+            "Value": "Türkçe"
+          },
+          {
+            "Label": "Tiếng Việt",
+            "Value": "Tiếng Việt"
+          },
+          {
+            "Label": "自定义",
+            "Value": "自定义"
+          }
+        ]
+      }
+    },
+    {
+      "Type": "textbox",
+      "Value": {
+        "Key": "customLanguage",
+        "Label": "i18n:setting_custom_language",
+        "Tooltip": "i18n:setting_custom_language_tip",
+        "DefaultValue": "",
+        "MaxLines": 1,
+        "Style": {
+          "Width": 300
+        }
+      }
+    },
+    {
+      "Type": "textbox",
+      "Value": {
+        "Key": "prompt",
+        "Label": "i18n:setting_prompt",
+        "Tooltip": "i18n:setting_prompt_tip",
+        "DefaultValue": "You are a dictionary data extractor, not a writer.\nOutput data for the word \"{term}\".\nDefinitions and meanings must be written in {language}; English translations must be written in English.\nReturn ONLY these lines, one per line, as key|value:\npos|part of speech with [C]/[U] for nouns and vt./vi. for verbs, e.g. n. [C]\nbr|British IPA pronunciation\nam|American IPA pronunciation\ndef1|first meaning written in {language}\ndef1en|concise English translation of def1\ndef2|second meaning written in {language}\ndef2en|concise English translation of def2\ncoll1|first common collocation phrase\ncoll1meaning|meaning of coll1 written in {language}\ncoll2|second common collocation phrase\ncoll2meaning|meaning of coll2 written in {language}\nnote|one short usage, register or connotation note written in {language}\n\nRules: use accurate British and American IPA, show both even if identical; values must not contain newlines or the | character; output nothing else, no code fence, no markdown, no explanations.",
+        "MaxLines": 15,
+        "Style": {
+          "Width": 560
+        }
+      }
+    },
+    {
+      "Type": "checkbox",
+      "Value": {
+        "Key": "resetPrompt",
+        "Label": "i18n:setting_reset_prompt",
+        "Tooltip": "i18n:setting_reset_prompt_tip",
+        "DefaultValue": "false"
+      }
+    },
+    {
+      "Type": "textbox",
+      "Value": {
+        "Key": "maxTokens",
+        "Label": "i18n:setting_max_tokens",
+        "Tooltip": "i18n:setting_max_tokens_tip",
+        "DefaultValue": "350",
+        "MaxLines": 1,
+        "Style": {
+          "Width": 120
+        },
+        "Validators": [
+          {
+            "Type": "is_number",
+            "Value": {
+              "IsInteger": true,
+              "IsFloat": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Type": "textbox",
+      "Value": {
+        "Key": "timeoutSeconds",
+        "Label": "i18n:setting_timeout",
+        "Tooltip": "i18n:setting_timeout_tip",
+        "DefaultValue": "30",
+        "MaxLines": 1,
+        "Style": {
+          "Width": 120
+        },
+        "Validators": [
+          {
+            "Type": "is_number",
+            "Value": {
+              "IsInteger": true,
+              "IsFloat": false
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
