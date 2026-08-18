@@ -10,7 +10,7 @@ A dictionary plugin for [Wox 2](https://github.com/Wox-launcher/Wox) that genera
 
 - **Complete entries** — part of speech, British & American pronunciation (IPA), meanings with English glosses, common collocations, and usage notes
 - **Always clean formatting** — the plugin renders the result card itself, so the layout stays correct no matter which model you use
-- **17 explanation languages** — 简体中文 / 繁體中文 / English / 日本語 / 한국어 / Français / Deutsch / Español / Italiano / Português / Nederlands / Русский / Polski / Українська / Türkçe / Tiếng Việt / 自定义
+- **17 explanation languages** — 简体中文 / 繁體中文 / English / 日本語 / 한국어 / Français / Deutsch / Español / Italiano / Português / Nederlands / Русский / Polski / Українська / Türkçe / Tiếng Việt / Custom
 - **Look up selected text** — select any word anywhere and query it directly
 - **Cross-platform** — Windows, Linux, macOS
 
@@ -37,8 +37,8 @@ Press `Alt+Space`, type `dic apple`, then press `Enter` to look up the word. Pre
 | Model | Model name from your provider, e.g. `deepseek-v4-flash` |
 | API Key | Required for AI lookups |
 | API Base URL | OpenAI-compatible endpoint, e.g. `https://api.deepseek.com` |
-| Explanation Language | 简体中文 / 繁體中文 / English / 日本語 / 한국어 / Français / Deutsch / Español / Italiano / Português / Nederlands / Русский / Polski / Українська / Türkçe / Tiếng Việt / 自定义 |
-| Custom Language Name | Only used when Explanation Language is 自定义 — the AI writes definitions in this language, card labels stay in English |
+| Explanation Language | 简体中文 / 繁體中文 / English / 日本語 / 한국어 / Français / Deutsch / Español / Italiano / Português / Nederlands / Русский / Polski / Українська / Türkçe / Tiếng Việt / Custom |
+| Custom Language Name | Only used when Explanation Language is Custom — the AI writes definitions in this language, card labels stay in English |
 | Max Tokens / Timeout | Recommended: `350` / `30` |
 
 ## Development

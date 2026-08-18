@@ -10,7 +10,7 @@
 
 - **词条完整** — 词性、英音/美音（IPA）、释义（含英文对照）、常见搭配、用法提示
 - **格式永远正确** — 结果卡片由插件自行渲染，不依赖模型输出的 Markdown
-- **17 种释义语言** — 简体中文 / 繁體中文 / English / 日本語 / 한국어 / Français / Deutsch / Español / Italiano / Português / Nederlands / Русский / Polski / Українська / Türkçe / Tiếng Việt / 自定义
+- **17 种释义语言** — 简体中文 / 繁體中文 / English / 日本語 / 한국어 / Français / Deutsch / Español / Italiano / Português / Nederlands / Русский / Polski / Українська / Türkçe / Tiếng Việt / Custom
 - **划词查询** — 在任意位置选中单词即可直接查询
 - **跨平台** — Windows / Linux / macOS
 
@@ -37,8 +37,8 @@ C:\Users\<用户名>\.wox\wox-user\plugins\dc59e6f7-2ec4-49f0-88d8-515f571e27d2@
 | 模型 | 服务商提供的模型名，例如 `deepseek-v4-flash` |
 | API Key | 调用 AI 必需 |
 | API 接口地址 | OpenAI 兼容地址，例如 `https://api.deepseek.com` |
-| 释义语言 | 简体中文 / 繁體中文 / English / 日本語 / 한국어 / Français / Deutsch / Español / Italiano / Português / Nederlands / Русский / Polski / Українська / Türkçe / Tiếng Việt / 自定义 |
-| 自定义语言名称 | 仅当释义语言为「自定义」时生效 —— AI 用该语言书写释义，卡片标签保持英文结构 |
+| 释义语言 | 简体中文 / 繁體中文 / English / 日本語 / 한국어 / Français / Deutsch / Español / Italiano / Português / Nederlands / Русский / Polski / Українська / Türkçe / Tiếng Việt / Custom |
+| 自定义语言名称 | 仅当释义语言为「Custom」时生效 —— AI 用该语言书写释义，卡片标签保持英文结构 |
 | 最大输出 token / 请求超时 | 建议 `350` / `30` |
 
 ## 开发

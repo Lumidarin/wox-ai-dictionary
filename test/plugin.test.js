@@ -165,11 +165,11 @@ ok("buildPrompt replaces {language} for Russian and Polish", () => {
   assert.ok(buildPrompt("apple", "简体中文", "").includes("written in Simplified Chinese"));
 });
 
-ok("buildPrompt falls back to English for 自定义 when no name is set", () => {
+ok("buildPrompt falls back to English for Custom when no name is set", () => {
   const prev = settings.customLanguage;
   settings.customLanguage = "";
   try {
-    assert.ok(buildPrompt("apple", "自定义", "").includes("written in English"));
+    assert.ok(buildPrompt("apple", "Custom", "").includes("written in English"));
   } finally {
     settings.customLanguage = prev;
   }
@@ -179,14 +179,14 @@ ok("buildPrompt uses the custom language name when set", () => {
   const prev = settings.customLanguage;
   settings.customLanguage = "Swedish";
   try {
-    assert.ok(buildPrompt("apple", "自定义", "").includes("written in Swedish"));
+    assert.ok(buildPrompt("apple", "Custom", "").includes("written in Swedish"));
   } finally {
     settings.customLanguage = prev;
   }
 });
 
-ok("renderCard uses English structure for 自定义", () => {
-  const card = renderCard("simp", "自定义", { pos: "n. [C]", br: "sɪmp", am: "sɪmp", def1: "a simp", def1en: "a simp", coll1: "simp for", coll1meaning: "to be a simp", note: "slang" });
+ok("renderCard uses English structure for Custom", () => {
+  const card = renderCard("simp", "Custom", { pos: "n. [C]", br: "sɪmp", am: "sɪmp", def1: "a simp", def1en: "a simp", coll1: "simp for", coll1meaning: "to be a simp", note: "slang" });
   assert.ok(card.includes("Collocations"));
   assert.ok(card.includes("BrE"));
 });

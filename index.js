@@ -20996,7 +20996,7 @@ Rules: use accurate British and American IPA, show both even if identical; value
 function buildPrompt(term, language, custom) {
   const template = text(custom !== undefined ? custom : settings.prompt) || DEFAULT_PROMPT;
   let languageName;
-  if (language === "自定义") {
+  if (language === "Custom") {
     languageName = text(settings.customLanguage) || "English";
   } else {
     languageName = LANGUAGE_NAMES[language] || language;
@@ -21010,7 +21010,7 @@ const LANGUAGE_FORMATS = {
   "简体中文": { br: "英", am: "美", collocations: "搭配", note: "提示" },
   "繁體中文": { br: "英", am: "美", collocations: "搭配", note: "提示" },
   "English": { br: "BrE", am: "AmE", collocations: "Collocations", note: "Note" },
-  "自定义": { br: "BrE", am: "AmE", collocations: "Collocations", note: "Note" },
+  "Custom": { br: "BrE", am: "AmE", collocations: "Collocations", note: "Note" },
   "日本語": { br: "英", am: "米", collocations: "コロケーション", note: "ヒント" },
   "한국어": { br: "영국식", am: "미국식", collocations: "연어", note: "참고" },
   "Français": { br: "GB", am: "US", collocations: "Collocations", note: "Note" },

@@ -30,7 +30,7 @@
       "setting_language": "Explanation language",
       "setting_language_tip": "Language used for definitions and explanations. The {language} placeholder in the prompt below is replaced with this language.",
       "setting_custom_language": "Custom language name",
-      "setting_custom_language_tip": "Used only when Explanation Language is set to 自定义. The AI writes definitions in this language, while card labels stay in English (BrE/AmE/Collocations/Note).",
+      "setting_custom_language_tip": "Used only when Explanation Language is set to Custom. The AI writes definitions in this language, while card labels stay in English (BrE/AmE/Collocations/Note).",
       "setting_api_key": "API Key",
       "setting_api_key_tip": "Required for AI lookups. Current Wox versions cannot route Node.js plugin requests through the Wox AI section, so this plugin sends requests directly to the endpoint below and needs its own key.",
       "setting_base_url": "API Base URL",
@@ -63,7 +63,7 @@
       "setting_language": "释义语言",
       "setting_language_tip": "定义和说明使用的语言。下方提示词中的 {language} 占位符会被替换为该语言。",
       "setting_custom_language": "自定义语言名称",
-      "setting_custom_language_tip": "仅当释义语言选择「自定义」时生效。AI 将使用该语言书写释义，卡片标签保持英文结构（BrE/AmE/Collocations/Note）。",
+      "setting_custom_language_tip": "仅当释义语言选择「Custom」时生效。AI 将使用该语言书写释义，卡片标签保持英文结构（BrE/AmE/Collocations/Note）。",
       "setting_api_key": "API Key",
       "setting_api_key_tip": "调用 AI 必需。当前 Wox 版本无法把 Node 插件的请求路由到 Wox「设置 → AI」，本插件直接请求下方接口地址，因此需要在这里单独填写密钥。",
       "setting_base_url": "API 接口地址",
@@ -214,8 +214,8 @@
             "Value": "Tiếng Việt"
           },
           {
-            "Label": "自定义",
-            "Value": "自定义"
+            "Label": "Custom",
+            "Value": "Custom"
           }
         ]
       }
